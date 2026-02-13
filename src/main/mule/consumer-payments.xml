@@ -40,7 +40,7 @@ default "") ++ " " ++ payload.lastName
 		</ee:transform>
 		<logger level="INFO" doc:name="Logger" doc:id="d881e7c7-6588-4fc9-be22-da478327a4a0" message="Customer Stripe: #[vars.stripePayload]"/>
 		<stripe:create-v1-customers doc:name="Create a customer" doc:id="86ae27d1-5298-4f4f-83a7-a8fe031bbdbc" config-ref="Stripe_Connector_Config">
-			<ee:repeatable-file-store-stream bufferUnit="MB" />
+			<ee:repeatable-file-store-stream bufferUnit="" />
 			<stripe:create-customer-content ><![CDATA[#[vars.stripePayload]]]></stripe:create-customer-content>
 		</stripe:create-v1-customers>
 	</flow>
