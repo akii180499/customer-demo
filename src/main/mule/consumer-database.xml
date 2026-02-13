@@ -10,7 +10,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd">
 
 	<db:config name="Database_Config" doc:name="Database Config" doc:id="8be55605-97fc-4fc1-a178-df2aabc083cf" >
-		<db:generic-connection url="${database}" driverClassName="${database.driver}" user="${database.user}" password="${database.password}" />
+		<db:generic-connection url="${database.url}" driverClassName="${database.driver}" user="${database.user}" password="${database.password}" />
 	</db:config>
 	<flow name="CreateCustomerDatabase" doc:id="c9b3cd43-3ce1-4dd5-8a97-5d64a285609e" >
 		<amqp:listener doc:name="Consume from customer.create.database" doc:id="4f2f62c7-6d10-4b63-892a-cfe8619683e3" config-ref="AMQP_Config" queueName="${customercreate-queues.database}"/>
