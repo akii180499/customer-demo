@@ -7,7 +7,7 @@ http://www.mulesoft.org/schema/mule/amqp http://www.mulesoft.org/schema/mule/amq
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/stripe http://www.mulesoft.org/schema/mule/stripe/current/mule-stripe.xsd
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
-
+<!-- This is a comment -->
 	<stripe:config name="Stripe_Connector_Config" doc:name="Stripe Connector Config" doc:id="edf0b82c-c3c4-43a7-91d4-b1089951bf59" >
 		<stripe:api-key-connection authorization="${paymentsprocessor.authorizationkey}" />
 	</stripe:config>
