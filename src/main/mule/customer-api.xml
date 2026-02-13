@@ -97,7 +97,7 @@ output application/json
 {message: "Not Implemented"}]]></ee:set-payload>
                     </ee:message>
                     <ee:variables>
-                        <ee:set-variable variableName="httpStatus">501</ee:set-variable>
+                        <ee:set-variable variableName="httpStatus"></ee:set-variable>
                     </ee:variables>
                 </ee:transform>
             </on-error-propagate>
@@ -132,7 +132,10 @@ output application/json
     </flow>
     <flow name="post:\customers:application\json:customer-api-config">
         <logger level="INFO" doc:name="Logger" doc:id="62563a88-2489-4abe-80e2-f591b3b8510a" message="Message received: #[payload]"/>
-		<set-variable value='#[%dw 2.0&#10;output text/plain&#10;---&#10;contains(payload.deliveryAddresses."type", "BILLING")]' doc:name="Billing Address" doc:id="9f5162d1-293a-4e5f-badf-057073c57707" variableName="isBillingAddress"/>
+		<set-variable value='#[%dw 2.0
+&#10;output text/plain
+&#10;---
+&#10;contains(payload.deliveryAddresses."type", "BILLING")]' doc:name="Billing Address" doc:id="9f5162d1-293a-4e5f-badf-057073c57707" variableName="isBillingAddress"/>
 		<validation:is-true doc:name="Billing Address Present?" doc:id="0164dc80-ddca-4c3a-b8a0-9ed757ab1e7a" message="The customer record does not have a billing address" expression="#[vars.isBillingAddress]"/>
 		<amqp:publish doc:name="Publish" doc:id="3e171a67-8e4f-4f31-802b-2cfdcdb0f08e" config-ref="AMQP_Config" exchangeName="${customercreate-queues.topic}"/>
 		<ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
@@ -163,3 +166,4 @@ output application/json
         </error-handler>		
     </flow>
 </mule>
+
