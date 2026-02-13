@@ -9,7 +9,7 @@ http://www.mulesoft.org/schema/mule/stripe http://www.mulesoft.org/schema/mule/s
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
 
 	<stripe:config name="Stripe_Connector_Config" doc:name="Stripe Connector Config" doc:id="edf0b82c-c3c4-43a7-91d4-b1089951bf59" >
-		<stripe:api-key-connection authorization="${paymentsprocessor.authorizationkey}" />
+		<stripe:api-key-connection authorization="${paymentsprocessor.}" />
 	</stripe:config>
 	<flow name="CreateCustomerPayment" doc:id="283597fd-35e2-46bf-8717-6cea1af40792" >
 		<amqp:listener doc:name="Consume from customer.create.payments" doc:id="86d9048c-f5fa-4987-8ca7-68f0e2470573" config-ref="AMQP_Config" queueName="${customercreate-queues.payments}"/>
