@@ -9,6 +9,7 @@ http://www.mulesoft.org/schema/mule/stripe http://www.mulesoft.org/schema/mule/s
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
 http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd">
 <!-- This is a comment -->
+<!-- This is a comment1 -->
 	<db:config name="Database_Config" doc:name="Database Config" doc:id="8be55605-97fc-4fc1-a178-df2aabc083cf" >
 		<db:generic-connection url="${database.url}" driverClassName="${database.driver}" user="${database.user}" password="${database.password}" />
 	</db:config>
