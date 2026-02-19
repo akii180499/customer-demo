@@ -136,7 +136,7 @@ output application/json
 		<set-variable value='#[%dw 2.0
 &#10;output text/plain
 &#10;---
-&#10;contains(payload.deliveryAddresses."type", "BILLING")]' doc:name="Billing Address" doc:id="9f5162d1-293a-4e5f-badf-057073c57707" variableName="isBillingAddress"/>
+&#10;contains(payload.deliveryAddresses."type", "BILLING")]' doc:name="Billing Address" doc:id="9f5162d1-293a-4e5f-badf-057073c57707" variableName="BillingAddress"/>
 		<validation:is-true doc:name="Billing Address Present?" doc:id="0164dc80-ddca-4c3a-b8a0-9ed757ab1e7a" message="The customer record does not have a billing address" expression="#[vars.isBillingAddress]"/>
 		<amqp:publish doc:name="Publish" doc:id="3e171a67-8e4f-4f31-802b-2cfdcdb0f08e" config-ref="AMQP_Config" exchangeName="${customercreate-queues.topic}"/>
 		<ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
