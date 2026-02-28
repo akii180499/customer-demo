@@ -42,11 +42,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY}}
           REPO_NAME: ${{ github.repository }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          cd code-review
-          python mulesoft_enhanced_validation.py
+          cd mulesoft_review
+          python main.py
       
       - name: Upload Review Artifacts
         if: always()
