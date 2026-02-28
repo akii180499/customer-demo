@@ -46,7 +46,6 @@ jobs:
           REPO_NAME: ${{ github.repository }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          cd mulesoft_review
           python main.py
       
       - name: Upload Review Artifacts
