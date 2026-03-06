@@ -34,7 +34,7 @@ default "") ++ " " ++ payload.lastName
 ++ "&" ++
 "address[state]=" ++ payload.deliveryAddresses[1].state
 ++ "&" ++
-"address[country]=" ++ payload.deliveryAddresses[1].country
+"address[country]=" ++ payload.deliveryAddresses[1]
 ]]></ee:set-variable>
 			</ee:variables>
 		</ee:transform>
