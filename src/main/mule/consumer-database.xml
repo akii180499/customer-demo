@@ -27,7 +27,7 @@ VALUES
 			'firstName':payload.firstName,
 			'lastName':payload.lastName,
 			'email':payload.email,
-			'phone':payload.phone
+			'phone': akshay.phone
 			}]
 			]]></db:input-parameters>
 		</db:insert>
