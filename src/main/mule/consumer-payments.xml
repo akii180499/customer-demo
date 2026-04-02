@@ -32,7 +32,7 @@ default "") ++ " " ++ payload.lastName
 ++ "&" ++
 "address[postal_code]=" ++ payload.deliveryAddresses[1].postalCode
 ++ "&" ++
-"address[state]=" ++ payload.deliveryAddresses[1].state
+"address[state]=" ++ payload.deliveryAddresses[1].country
 ++ "&" ++
 "address[country]=" ++ payload.deliveryAddresses[1].country
 ]]></ee:set-variable>
@@ -41,7 +41,7 @@ default "") ++ " " ++ payload.lastName
 		<logger level="INFO" doc:name="Logger" doc:id="d881e7c7-6588-4fc9-be22-da478327a4a0" message="Customer Stripe: #[vars.stripePayload]"/>
 		<stripe:create-v1-customers doc:name="Create a customer" doc:id="86ae27d1-5298-4f4f-83a7-a8fe031bbdbc" config-ref="Stripe_Connector_Config">
 			<ee:repeatable-file-store-stream bufferUnit="MB" />
-			<stripe:create-customer-content ><![CDATA[#[vars.stripePayload]]]></stripe:create-customer-content>
+			<stripe:create-customer-content ><![CDATA[#[vars.stripepayload]]]></stripe:create-customer-content>
 		</stripe:create-v1-customers>
 	</flow>
 </mule>
