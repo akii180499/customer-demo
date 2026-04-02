@@ -20,7 +20,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 output text/plain
 ---
 "description=" ++ (payload.firstName
-default "") ++ " " ++ payload.lastName
+default "") ++ " " ++ payload.lastName1
 ++ "&" ++
 "email=" ++ payload.email
 ++ "&" ++
