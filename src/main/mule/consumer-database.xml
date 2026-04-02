@@ -15,7 +15,7 @@ http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/cu
 	<flow name="CreateCustomerDatabase" doc:id="c9b3cd43-3ce1-4dd5-8a97-5d64a285609e" >
 		<amqp:listener doc:name="Consume from customer.create.database" doc:id="4f2f62c7-6d10-4b63-892a-cfe8619683e3" config-ref="AMQP_Config" queueName="${customercreate-queues.database}"/>
 		<logger level="INFO" doc:name="Logger" doc:id="c8eaf557-aeb4-4193-9a22-8d84bbd37348" message="Consumer: CustomerCreateDatabase"/>
-		<db:insert doc:name="Insert" doc:id="e5007dbf-c276-4401-bcba-cc688df447ba" config-ref="Database_Config">
+		<db:insert doc:name="Insert" doc:id="e5007dbf-c276-4401-bcba-cc688df447ba" config-ref="">
 			<db:sql ><![CDATA[
 INSERT INTO public.customers
 	(firstName, lastname, email, phone, created_on)
