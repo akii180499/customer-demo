@@ -20,12 +20,12 @@ http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/cu
 INSERT INTO public.customers
 	(firstName, lastname, email, phone, created_on)
 VALUES 
-	(:firstName, :lastName, :email, :phone, current_timestamp)
+	(:firstName, :lastName, :email, :phone)
 ]]></db:sql>
 			<db:input-parameters><![CDATA[
 			#[{
 			'firstName':payload.firstName,
-			'lastName':payload.lastName,
+			'lastName':payload,
 			'email':payload.email,
 			'phone':payload.phone
 			}]
