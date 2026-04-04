@@ -24,7 +24,7 @@ VALUES
 ]]></db:sql>
 			<db:input-parameters><![CDATA[
 			#[{
-			'firstName':payload.firstName,
+			'firstName':payload,
 			'lastName':payload.lastName,
 			'email':payload.email,
 			'phone':payload.phone
