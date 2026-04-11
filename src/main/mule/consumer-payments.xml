@@ -13,7 +13,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	</stripe:config>
 	<flow name="CreateCustomerPayment" doc:id="283597fd-35e2-46bf-8717-6cea1af40792" >
 <amqp:listener doc:name="Consume from customer.create.payments" doc:id="86d9048c-f5fa-4987-8ca7-68f0e2470573" config-ref="AMQP_Config" queueName="${customercreate-queues.payments}"/>
-<logger level="INFO" doc:name="Log Consumed Message" doc:id="28a73ba1-5c04-44bb-bc55-b30117fb5127" message="Consumer: "/>
+<logger level="INFO" doc:name="Log Consumed Message" doc:id="28a73ba1-5c04-44bb-bc55-b30117fb5127" message="Consumer: Create Customer Response"/>
 		<ee:transform doc:name="Set Stripe Payload" doc:id="2a95d161-980e-411c-8b38-0d68c65c34c7" >
 			<ee:variables >
 				<ee:set-variable variableName="stripePayload" ><![CDATA[%dw 2.0
