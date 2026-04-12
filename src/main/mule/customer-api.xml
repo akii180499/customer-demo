@@ -131,7 +131,7 @@ output application/json
         </error-handler>
     </flow>
     <flow name="post:\customers:application\json:customer-api-config">
-        <logger level="INFO" doc:name="Logger" doc:id="62563a88-2489-4abe-80e2-f591b3b8510a" message="Message received: #[payload]"/>
+        <logger level="INFO" doc:name="Logger" doc:id="62563a88-2489-4abe-80e2-f591b3b8510a" message="Message received"/>
 		<set-variable value='#[%dw 2.0
 &#10;output text/plain
 &#10;---
@@ -148,7 +148,7 @@ output application/json
 }]]></ee:set-payload>
             </ee:message>
         </ee:transform>
-		<logger level="INFO" doc:name="Logger" doc:id="f55e30ad-9630-497c-af91-2fbf7a95fee9" message="Message processed: #[payload]"/>
+		<logger level="INFO" doc:name="Logger" doc:id="f55e30ad-9630-497c-af91-2fbf7a95fee9" message="Message processed"/>
         <error-handler>
             <on-error-propagate type="VALIDATION:INVALID_BOOLEAN" doc:name="Validation: Billing Adddress is not present in the payload">
                 <ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
