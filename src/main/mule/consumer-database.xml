@@ -18,9 +18,9 @@ http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/cu
 		<db:insert doc:name="Insert" doc:id="e5007dbf-c276-4401-bcba-cc688df447ba" config-ref="Database_Config">
 			<db:sql ><![CDATA[
 INSERT INTO public.customers
-	(firstName, lastname, email, phone)
+	(firstName, lastname, email, phone,created_on)
 VALUES 
-	(:firstName, :lastName, :email, :phone)
+	(:firstName, :lastName, :email, :phone,:current_timestamp)
 ]]></db:sql>
 			<db:input-parameters><![CDATA[
 			#[{
